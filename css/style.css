@@ -1,0 +1,48 @@
+/* regole generali */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 100px;
+}
+#contenitore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    height: calc(100vh - 200px);
+
+}
+
+#new-grid{
+    display: flex;
+    flex-wrap: wrap;
+    height: 650px;
+    width: 650px;
+}
+.easy-grid{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 3px solid white;
+    cursor: pointer;
+}
+.hard-grid{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 3px solid white;
+    cursor: pointer;
+}
+.very-hard-grid{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 3px solid white;
+    cursor: pointer;
+}
+footer{
+    height: 100px;
+}
+
