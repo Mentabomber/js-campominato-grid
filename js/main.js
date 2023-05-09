@@ -23,6 +23,11 @@ function gridCreation (elementType, className){
     
 }
 
+const buttonInteractor = document.getElementById("button-play");
+
+buttonInteractor.addEventListener("click",
+function(){
+
 
 
 for (let i = 0; i < 100; i++) {
@@ -53,6 +58,9 @@ for (let i = 0; i < 100; i++) {
     gridElement.append(newGrid);
 }
 
+}
 
+
+)
 
 console.log(listArray);
