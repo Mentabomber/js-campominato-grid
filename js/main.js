@@ -23,26 +23,36 @@ function gridCreation (elementType, className){
     
 }
 
-function arrayNumGenerator() {
 
-
-
-}
 
 for (let i = 0; i < 100; i++) {
     
-    listArray.push(i + 1);
+    listArray.push(i + 1);  
 
-    const newGrid = gridCreation("div", "easy-grid");
+    const newGrid = gridCreation("div", "easy-grid-box");
 
     const newSpan = document.createElement("span");
-
-    gridElement.append(newGrid);
 
     newGrid.append(newSpan);
 
     newSpan.append(listArray[i]);
 
+    newGrid.addEventListener("click",
+    
+    function(){
+
+        this.classList.add("element-selected");
+    
+    }
+    
+    )
+
+    
+
+
+    gridElement.append(newGrid);
 }
+
+
 
 console.log(listArray);

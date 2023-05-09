@@ -9,13 +9,46 @@
 header{
     height: 100px;
 }
+.container{
+    width: 1080px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.header-container-left,
+.header-container-right
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%
+}
+.header-container-right{
+    justify-content: end;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+
+button{
+    height: 25px;
+    width: 40px;
+}
+main{
+    background-color: aqua;
+}
+
 #contenitore{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
     height: calc(100% - 200px);
     padding: 50px;
+    width: 1080px;
+    margin: auto;
 
 }
 
@@ -25,23 +58,27 @@ header{
     height: 650px;
     width: 650px;
 }
-.easy-grid{
+.easy-grid-box{
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 3px solid white;
     cursor: pointer;
 }
-.hard-grid{
+.hard-grid-box{
     width: calc(100% / 9);
     height: calc(100% / 9);
     border: 3px solid white;
     cursor: pointer;
 }
-.very-hard-grid{
+.very-hard-grid-box{
     width: calc(100% / 7);
     height: calc(100% / 7);
     border: 3px solid white;
     cursor: pointer;
+}
+
+.element-selected{
+    background-color: blue;
 }
 footer{
     height: 100px;
