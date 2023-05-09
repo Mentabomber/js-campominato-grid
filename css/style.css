@@ -38,29 +38,32 @@ button{
     width: 40px;
 }
 #button-play{
-    
+
+}
+#difficulty{
+
 }
 main{
     background-color: aqua;
+    height: calc(100vh - 200px);
 }
 
 #contenitore{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100% - 200px);
+    height: 100%;
     padding: 50px;
     width: 1080px;
     margin: auto;
 
 }
 
-#new-grid{
-    display: flex;
-    flex-wrap: wrap;
+#grid{
     height: 650px;
     width: 650px;
 }
+
 .easy-grid-box{
     width: calc(100% / 10);
     height: calc(100% / 10);
@@ -79,7 +82,15 @@ main{
     border: 3px solid white;
     cursor: pointer;
 }
-
+.hidden-grid{
+    display: none;
+}
+.show-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 .element-selected{
     background-color: blue;
 }

@@ -9,11 +9,18 @@
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
-let gridElement = document.getElementById("new-grid");
+let gridElement = document.getElementById("grid");
 
-const listArray = [];
 
-function gridCreation (elementType, className){
+let index, contatore, boxDifficulty;
+
+
+
+// var selectedDifficulty;
+
+
+
+function boxCreation (elementType, className){
 
     const newElement = document.createElement(elementType);
 
@@ -27,40 +34,135 @@ const buttonInteractor = document.getElementById("button-play");
 
 buttonInteractor.addEventListener("click",
 function(){
+    var difficulty = document.getElementById("difficulty").value;
+    gridElement.replaceChildren();
 
-
-
-for (let i = 0; i < 100; i++) {
+    console.log(difficulty);
     
-    listArray.push(i + 1);  
+    let boxes;
 
-    const newGrid = gridCreation("div", "easy-grid-box");
+    if(difficulty == "Easy"){
+        boxes = creaGriglia(100, "easy-grid-box" );
+    }
+    else if(difficulty == "Hard"){
+        boxes = creaGriglia(81, "hard-grid-box" );
+    }
+    else if(difficulty == "Very Hard"){
+        boxes = creaGriglia(49, "very-hard-grid-box" );
+    }
+    for(let i = 0; i < boxes.length; i++){
 
-    const newSpan = document.createElement("span");
-
-    newGrid.append(newSpan);
-
-    newSpan.append(listArray[i]);
-
-    newGrid.addEventListener("click",
-    
-    function(){
-
-        this.classList.add("element-selected");
-    
+        gridElement.append(boxes[i]);
     }
     
-    )
-
-    
-
-
-    gridElement.append(newGrid);
 }
-
-}
-
 
 )
 
-console.log(listArray);
+function creaGriglia(numCaselle, gridStyle){
+
+    const boxes = [];
+
+    for (let i = 0; i < numCaselle; i++) {
+
+        const newBox = boxCreation("div", gridStyle);
+    
+        const newSpan = document.createElement("span");
+    
+        newBox.append(newSpan);
+    
+        newSpan.append(i + 1);
+    
+        newBox.addEventListener("click",
+        
+        function(){
+    
+            this.classList.add("element-selected");
+            console.log(i + 1);
+        
+        }
+        ) 
+        boxes.push(newBox);
+    }
+    return boxes;
+}
+
+
+
+
+
+// for (let i = 0; i < 100; i++) {
+
+//     const newGrid = gridCreation("div", "easy-grid-box");
+    
+
+//     listArray.push(i + 1);  
+
+//     const newSpan = document.createElement("span");
+
+//     newGrid.append(newSpan);
+
+//     newSpan.append(listArray[i]);
+
+//     newGrid.addEventListener("click",
+    
+//     function(){
+
+//         this.classList.add("element-selected");
+//         console.log(i + 1);
+    
+//     }
+//     ) 
+//     gridElementEasy.append(newGrid);
+// }
+
+// for (let i = 0; i < 81; i++) {
+
+//     const newGrid = gridCreation("div", "hard-grid-box");
+    
+
+//     listArray.push(i + 1);  
+
+//     const newSpan = document.createElement("span");
+
+//     newGrid.append(newSpan);
+
+//     newSpan.append(listArray[i]);
+
+//     newGrid.addEventListener("click",
+    
+//     function(){
+
+//         this.classList.add("element-selected");
+//         console.log(i + 1);
+    
+//     }
+//     ) 
+//     gridElementHard.append(newGrid);
+// }
+
+// for (let i = 0; i < 48; i++) {
+
+//     const newGrid = gridCreation("div", "very-hard-grid-box");
+    
+
+//     listArray.push(i + 1);  
+
+//     const newSpan = document.createElement("span");
+
+//     newGrid.append(newSpan);
+
+//     newSpan.append(listArray[i]);
+
+//     newGrid.addEventListener("click",
+    
+//     function(){
+
+//         this.classList.add("element-selected");
+//         console.log(i + 1);
+    
+//     }
+//     ) 
+//     gridElementVeryHard.append(newGrid);
+// }
+
