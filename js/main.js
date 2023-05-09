@@ -11,6 +11,8 @@
 
 let gridElement = document.getElementById("new-grid");
 
+const listArray = [];
+
 function gridCreation (elementType, className){
 
     const newElement = document.createElement(elementType);
@@ -21,10 +23,26 @@ function gridCreation (elementType, className){
     
 }
 
+function arrayNumGenerator() {
+
+
+
+}
+
 for (let i = 0; i < 100; i++) {
     
+    listArray.push(i + 1);
+
     const newGrid = gridCreation("div", "easy-grid");
+
+    const newSpan = document.createElement("span");
 
     gridElement.append(newGrid);
 
+    newGrid.append(newSpan);
+
+    newSpan.append(listArray[i]);
+
 }
+
+console.log(listArray);

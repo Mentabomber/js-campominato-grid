@@ -14,7 +14,8 @@ header{
     justify-content: center;
     align-items: center;
     background-color: aqua;
-    height: calc(100vh - 200px);
+    height: calc(100% - 200px);
+    padding: 50px;
 
 }
 
