@@ -35,7 +35,9 @@ const buttonInteractor = document.getElementById("button-play");
 buttonInteractor.addEventListener("click",
 function(){
     var difficulty = document.getElementById("difficulty").value;
+
     gridElement.replaceChildren();
+    // gridElement.innerHTML = ""; alternativa
 
     console.log(difficulty);
     
